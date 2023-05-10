@@ -6,129 +6,165 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/messenger.css">
   <script src="js/app.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/color-changer.js" defer></script>
+  <script src="js/check-password.js" defer></script>
+  <script src="js/font-size.js" defer></script>
   <title>Document</title>
 </head>
 <body>
   <header class="main-header">
     <div class="layers">
       <div class="layer__messenger">
-        <div class="chats">
-          <h1>Messenger</h1>
-          <div class="chat_list">
+        <div class="layer__chats">
+          <div class="layer__messenger-logo "><h1>Messenger</h1></div>
+          <div class="layer__chat_list">
             <div class="contact">
               <h1 class="contact_ava" style="background-image: url(img/ava.jpg);"></h1>
               <h2 class="contact_username">user1</h2>
+              <h2 class="delete_contact_button" style="background-image: url(img/delete.png)"></h2>
             </div>
             <div class="contact">
               <h1 class="contact_ava" style="background-image: url(img/ava.jpg);"></h1>
-              <h2 class="contact_username">user2</h2>
+              <h2 class="contact_username">user1</h2>
+              <h2 class="delete_contact_button" style="background-image: url(img/delete.png)"></h2>
             </div>
             <div class="contact">
               <h1 class="contact_ava" style="background-image: url(img/ava.jpg);"></h1>
-              <h2 class="contact_username">user3</h2>
+              <h2 class="contact_username">user1</h2>
+              <h2 class="delete_contact_button" style="background-image: url(img/delete.png)"></h2>
             </div>
             <div class="contact">
               <h1 class="contact_ava" style="background-image: url(img/ava.jpg);"></h1>
-              <h2 class="contact_username">user4</h2>
+              <h2 class="contact_username">user1</h2>
+              <h2 class="delete_contact_button" style="background-image: url(img/delete.png)"></h2>
             </div>
             <div class="contact">
               <h1 class="contact_ava" style="background-image: url(img/ava.jpg);"></h1>
-              <h2 class="contact_username">user5</h2>
+              <h2 class="contact_username">user1</h2>
+              <h2 class="delete_contact_button" style="background-image: url(img/delete.png)"></h2>
             </div>
-          </div>
+            <div class="contact">
+              <h1 class="contact_ava" style="background-image: url(img/ava.jpg);"></h1>
+              <h2 class="contact_username">user1</h2>
+              <h2 class="delete_contact_button" style="background-image: url(img/delete.png)"></h2>
+            </div>
+            <div class="contact">
+              <h1 class="contact_ava" style="background-image: url(img/ava.jpg);"></h1>
+              <h2 class="contact_username">user1</h2>
+              <h2 class="delete_contact_button" style="background-image: url(img/delete.png)"></h2>
+            </div>    
+            </div>
         </div>
-        <div class="userinfo">
-          <div class="contact_info">
-            <h1 class="contact_ava_info" style="background-image: url(img/ava.jpg);"></h1>
-            <h2 class="contact_username_info">user2</h2>
+        <div class="layer__chat-territory">
+          <div class="chat-item">
+            <div class="layer__userinfo">
+              <div class="contact_info">
+                <h1 class="contact_ava_info" style="background-image: url(img/ava.jpg);"></h1>
+                <h2 class="contact_username_info">user2</h2>
+                <a class="contact__to-settings-button" href="#copy" style="background-image: url(img/control.png);"></a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="messages_field">
-          <div class="message">
-            <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
-            <h2 class="message_contact_username">user1</h2>
-            <h2 class="message_text">Lorem ipsum dolor sit.</h2>
+          <div class="chat-item">
+            <div class="layer__messages_field">
+              <div class="message">
+                <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
+                <h2 class="message_contact_username">user1</h2>
+                <h2 class="message_text">Lorem ipsum dolor sit.</h2>
+              </div>
+              <div class="message">
+                <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
+                <h2 class="message_contact_username">user1</h2>
+                <h2 class="message_text">Lorem ipsum dolor sit.</h2>
+              </div>
+              <div class="message">
+                <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
+                <h2 class="message_contact_username">user1</h2>
+                <h2 class="message_text">Lorem ipsum dolor sit.</h2>
+              </div>
+              <div class="message">
+                <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
+                <h2 class="message_contact_username">user1</h2>
+                <h2 class="message_text">Lorem ipsum dolor sit.</h2>
+              </div>
+              <div class="message">
+                <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
+                <h2 class="message_contact_username">user1</h2>
+                <h2 class="message_text">Lorem ipsum dolor sit.</h2>
+              </div>
+              <div class="message">
+                <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
+                <h2 class="message_contact_username">user1</h2>
+                <h2 class="message_text">Lorem ipsum dolor sit.</h2>
+              </div>
+              <div class="message">
+                <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
+                <h2 class="message_contact_username">user1</h2>
+                <h2 class="message_text">Lorem ipsum dolor sit.</h2>
+              </div>
+              <div class="message">
+                <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
+                <h2 class="message_contact_username">user1</h2>
+                <h2 class="message_text">Lorem ipsum dolor sit.</h2>
+              </div>
+            </div>
           </div>
-          <div class="message">
-            <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
-            <h2 class="message_contact_username">user2</h2>
-            <h2 class="message_text">Lorem ipsum dolor sit amet.</h2>
+          <div class="layer__text_input">
+            <textarea class="text_input_field" spellcheck="false"></textarea>
           </div>
-          <div class="message">
-            <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
-            <h2 class="message_contact_username">user1</h2>
-            <h2 class="message_text">Lorem, ipsum dolor.</h2>
-          </div>
-          <div class="message">
-            <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
-            <h2 class="message_contact_username">user2</h2>
-            <h2 class="message_text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio incidunt exercitationem harum vel corporis quo sapiente neque quibusdam quisquam, rerum eveniet doloribus omnis ducimus?</h2>
-          </div>
-          <div class="message">
-            <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
-            <h2 class="message_contact_username">user2</h2>
-            <h2 class="message_text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio incidunt exercitationem harum vel corporis quo sapiente neque quibusdam quisquam, rerum eveniet doloribus omnis ducimus?</h2>
-          </div>
-          <div class="message">
-            <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
-            <h2 class="message_contact_username">user2</h2>
-            <h2 class="message_text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio incidunt exercitationem harum vel corporis quo sapiente neque quibusdam quisquam, rerum eveniet doloribus omnis ducimus?</h2>
-          </div>
-          <div class="message">
-            <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
-            <h2 class="message_contact_username">user2</h2>
-            <h2 class="message_text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio incidunt exercitationem harum vel corporis quo sapiente neque quibusdam quisquam, rerum eveniet doloribus omnis ducimus?</h2>
-          </div>
-          <div class="message">
-            <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
-            <h2 class="message_contact_username">user2</h2>
-            <h2 class="message_text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio incidunt exercitationem harum vel corporis quo sapiente neque quibusdam quisquam, rerum eveniet doloribus omnis ducimus?</h2>
-          </div>
-          <div class="message">
-            <h1 class="message_contact_ava" style="background-image: url(img/ava.jpg);"></h1>
-            <h2 class="message_contact_username">user2</h2>
-            <h2 class="message_text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio incidunt exercitationem harum vel corporis quo sapiente neque quibusdam quisquam, rerum eveniet doloribus omnis ducimus?</h2>
-          </div>
-        </div>
-        <div class="text_input">
-          <textarea class="text_input_field" spellcheck="false"></textarea>
         </div>
       </div>
       <div class="layer layers__base" style="background-image: url(img/mount.jpg)"></div>
       <div class="layer layers__middle" style="background-image: url(img/mount-middle.png)"></div>
       <div class="layer layers__front" style="background-image: url(img/mount-front.png)"></div>
-      <div class="copy">© Arrkadique</div>
+      <div class="main-header__copy">© Arrkadique</div>
     </div>
   </header>
 
   <article class="main-article" style="background-image: url(img/second.jpg);">
     <div class="main-article__content">
-      <div class="container_settings">
-        <div class="settings_header">Settings</div>
-        <div class="ava_changer">
+      <div id="settings-cont" class="main-article__container_settings">
+        <div class="main-article__settings_header">Settings</div>
+        <div class="main-article__ava_changer">
           <h1 class="ava_in_changer" style="background-image: url(img/ava.jpg);"></h1>
           <h1 class="change_avatar">Change avatar...</h1>
         </div>
-        <div class="password_changer">
+        <div class="main-article__password_changer">
           <h1 class="new_password">New password: </h1>
-          <input class="new_password_input">
+          <input class="new_password_input" id="new_password_id" type="password">
+          <input type="image" src="./img/view.png" id="check_new_button" class="check_password" onclick="show_hide_password('check_new_button','new_password_id');">
+          <h1 class="confirm_password">Confirm password: </h1>
+          <input class="confirm_password_input" id="confirm_password_id" type="password">
+          <input type="image" src="./img/view.png" id="check_conf_button" class="check_conf_password" onclick="show_hide_password('check_conf_button','confirm_password_id');">
+          <input type="submit" class="main-article__enter_button" value="Save" href="./messenger.html">
         </div>
-        <div class="text_changer">
+        <div class="main-article__text_changer">
           <h1 class="new_font_size">Font size:</h1>
-          <input class="new_font_size_input">
-          <h1 class="new_font_weight">Font weight:</h1>
-          <input class="new_font_weight_input">
+          <input type="range" id="font-size" value="1" min="0.75" max="1.2" step="0.05" class="new_font_size_input">
         </div>
-        <div class="block_color">
-          <h1 class="new_block_color">Block color:</h1>
-          <input class="new_block_color_input">
+        <div class="main-article__block_color">
+          <div class="main-article_block-color-changer">
+            <input class="main-article__color-output" type="text" id="box" value="rgba(209, 164, 112, 0.5)">
+            <input class="main-article__color-red" type="range" id="red" value="209" min="0" max="255">
+            <input class="main-article__color-green" type="range" id="green" value="164" min="0" max="255">
+            <input class="main-article__color-blue" type="range" id="blue" value="112" min="0" max="255">
+            <input class="main-article__color-visibility" type="range" id="visibility" value="0.5" min="0" max="1" step="0.05">
+          </div>
+          <div class="main-article_hover-color-changer">
+            <input class="main-article__color-hover-output" type="text" id="box-hover" value="rgba(209, 164, 112, 0.5)">
+            <input class="main-article__color-hover-red" type="range" id="red-hover" value="209" min="0" max="255">
+            <input class="main-article__color-hover-green" type="range" id="green-hover" value="164" min="0" max="255">
+            <input class="main-article__color-hover-blue" type="range" id="blue-hover" value="112" min="0" max="255">
+            <input class="main-article__color-hover-visibility" type="range" id="visibility-hover" value="0.5" min="0" max="1" step="0.05">
+          </div>
         </div>
-        <div class="logout">
+        <div class="main-article__logout">
           <a class="logout_button" href="index.html">Logout</a>
         </div>
       </div>
     </div>
-    <div class="copy">© Arrkadique</div>
+    <div id="copy" class="main-article__copy">© Arrkadique</div>
   </article>
 </body>
 </html>

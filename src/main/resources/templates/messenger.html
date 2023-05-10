@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/messenger.css">
+  <script type="text/javascript" th:src="@{/js/app.js}" defer></script>
+  <script src="'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'"></script>
+  <script type="text/javascript" th:src="@{/js/color-changer.js}" defer></script>
+  <script type="text/javascript" th:src="@{/js/check-password.js}" defer></script>
+  <script type="text/javascript" th:src="@{/js/font-size.js}" defer></script>
+  <title>Document</title>
+</head>
+<body>
+  <header class="main-header">
+    <div class="layers">
+      <div class="layer__messenger">
+        <div class="layer__chats">
+          <div class="layer__messenger-logo "><h1>Messenger</h1></div>
+          <div class="layer__chat_list">
+              <tr th:each="user: ${users}">
+                  <span th:if="${user.username != active_username}">
+                  <form method="get" th:action="@{/messenger/{name}(name=${user.username})}">
+                          <button class="contact">
+                              <h1 class="contact_ava" th:style="'background-image:url(/img/' + ${user.avatar} + ');'"></h1>
+                              <h2 class="contact_username" th:text="${user.username}"></h2>
+                              <input type="hidden" name="username" th:value="${user.username}">
+                          </button>
+                  </form>
+                  </span>
+              </tr>
+        </div>
+        <div class="layer__chat-territory">
+          <div class="chat-item">
+            <div class="layer__userinfo">
+              <div class="contact_info">
+                <h1 class="contact_ava_info" th:style="'background-image:url(/img/' + ${active_user_avatar} + ');'"></h1>
+                <h2 class="contact_username_info" th:text="${active_username}"></h2>
+              </div>
+            </div>
+          </div>
+          <div class="chat-item">
+            <div class="layer__messages_field">
+                <tr th:each="message: ${messages}">
+                  <div class="message">
+                    <h1 class="message_contact_ava" th:style="'background-image:url(/img/' + ${message.avatar} + ');'"></h1>
+                    <h2 class="message_contact_username" th:text="${message.username}"></h2>
+                    <h2 class="message_text" th:text="${message.messageText}"></h2>
+                  </div>
+                </tr>
+              </div>
+            </div>
+          </div>
+          <div class="layer__text_input">
+              <form method="post">
+                    <input class="text_input_field" type="text" name="text" autocomplete="off">
+              <input type="submit" name="send" class="main-article__send_button" value="Send">
+                  <input type="hidden" name="dialog_id" th:value="${dialog_id}">
+              </form>
+          </div>
+        </div>
+      </div>
+      <div class="layer layers__base" style="background-image:url(/img/mount.jpg);"></div>
+      <div class="layer layers__middle" style="background-image:url(/img/mount-middle.png);"></div>
+      <div class="layer layers__front" style="background-image:url(/img/mount-front.png);"></div>
+
+      <div class="main-header__copy">© Arrkadique</div>
+    </div>
+  </header>
+
+  <article class="main-article" style="background-image:url(/img/second.jpg);">
+    <div class="main-article__content">
+      <div id="settings-cont" class="main-article__container_settings">
+        <div class="main-article__settings_header">Settings</div>
+          <form method="post" enctype="multipart/form-data" th:action="@{/messenger}">
+        <div class="main-article__ava_changer">
+          <h1 class="ava_in_changer" th:style="'background-image:url(/img/' + ${active_user_avatar} + ');'"></h1>
+          <input type="file" name="image" accept="image/png, image/jpeg" class="change_avatar" value="Change avatar...">
+        </div>
+          <input type="submit" name="save_ava" class="main-article__enter_button" value="Save">
+          </form>
+        <div class="main-article__password_changer">
+            <form method="post" th:action="@{/messenger}">
+                <h1 class="new_password">New password: </h1>
+                <input class="new_password_input" name="password" id="new_password_id" type="password">
+                <h1 class="confirm_password">Confirm password: </h1>
+                <input class="confirm_password_input" id="confirm_password_id" type="password">
+                <input type="submit" name="save_password" class="main-article__enter_button" value="Save">
+            </form>
+           </div>
+        <div class="main-article__text_changer">
+          <h1 class="new_font_size">Font size:</h1>
+          <input type="range" id="font-size" value="1" min="0.75" max="1.2" step="0.05" class="new_font_size_input">
+        </div>
+        <div class="main-article__block_color">
+            <form method="post" th:action="@{/messenger}">
+          <div class="main-article_block-color-changer">
+            <input class="main-article__color-output" name="color" type="text" id="box" th:value="${color}">
+            <input class="main-article__color-red" type="range" id="red" th:value="${colors[0]}" min="0" max="255">
+            <input class="main-article__color-green" type="range" id="green" th:value="${colors[1]}" min="0" max="255">
+            <input class="main-article__color-blue" type="range" id="blue" th:value="${colors[2]}" min="0" max="255">
+            <input class="main-article__color-visibility" type="range" id="visibility" th:value="${colors[3]}"min="0" max="1" step="0.05">
+          </div>
+          <div class="main-article_hover-color-changer">
+            <input class="main-article__color-hover-output" name="color_hover" type="text" id="box-hover" th:value="${color_hover}">
+            <input class="main-article__color-hover-red" type="range" id="red-hover" th:value="${colors_hover[0]}" min="0" max="255">
+            <input class="main-article__color-hover-green" type="range" id="green-hover" th:value="${colors_hover[1]}" min="0" max="255">
+            <input class="main-article__color-hover-blue" type="range" id="blue-hover" th:value="${colors_hover[2]}" min="0" max="255">
+            <input class="main-article__color-hover-visibility" type="range" id="visibility-hover" th:value="${colors_hover[3]}" min="0" max="1" step="0.05">
+          </div>
+            <input type="submit" name="save_color" class="main-article__color_button" value="Save">
+            </form>
+        </div>
+          <form th:action="@{/logout}" method="post">
+              <div class="main-article__logout">
+                  <input type="submit" class="logout_button" value="Logout" >
+              </div>
+          </form>
+      </div>
+    </div>
+    <div id="copy" class="main-article__copy">© Arrkadique</div>
+  </article>
+</body>
+</html>

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/main.css">
   <script src="js/app.js" defer></script>
+  <script src="js/check-password.js" defer></script>
   <title>Document</title>
 </head>
 <body>
@@ -18,21 +19,24 @@
       <div class="layer layers__base" style="background-image: url(img/mount.jpg)"></div>
       <div class="layer layers__middle" style="background-image: url(img/mount-middle.png)"></div>
       <div class="layer layers__front" style="background-image: url(img/mount-front.png)"></div>
-      <div class="copy">© Arrkadique</div>
+      <div class="main-header__copy">© Arrkadique</div>
     </div>
   </header>
 
   <article class="main-article" style="background-image: url(img/second.jpg);">
     <div class="main-article__content">
-      <div class="container">
+      <div class="main-article__container">
         <h2 class="main-article__header">Login</h2>
-        <input class="email">
-        <input class="password">
-        <a class="register" href="./register.html">Register?</a>
-        <a class="enter_button" href="./messenger.html">Enter</a>
+        <form action="./messenger.html">
+          <input class="main-article__email" required placeholder="Email">
+          <input class="main-article__password" id="password_input" type="password" required placeholder="Password"> 
+          <input type="submit" class="main-article__enter_button" value="Enter" href="./messenger.html">
+        </form>
+        <input type="image" src="./img/view.png" id="check_button" class="check_password" onclick="show_hide_password('check_button','password_input');">
+        <a class="main-article__register" href="./register.html">Register?</a>
       </div>
     </div>
-    <div class="copy">© Arrkadique</div>
+    <div class="main-article__copy">© Arrkadique</div>
   </article>
 </body>
 </html>

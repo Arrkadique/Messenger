@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/register.css">
+  <script th:src="@{js/app.js}" defer></script>
+  <script th:src="@{js/check-password.js}" defer></script>
+  <title>Document</title>
+</head>
+<body>
+  <article class="main-article" style="background-image:url(/img/second.jpg);">
+    <div class="main-article__content">
+      <div class="main-article__container">
+        <h2 class="main-article__header">Register</h2>
+        <form method="post" th:action="@{/registration}">
+          <input class="main-article__email" name="email" required placeholder="Email">
+          <input class="main-article__username" name="username" required placeholder="Username">
+          <input class="main-article__password" name="password" id="ma__password" type="password" required placeholder="Password">
+          <input class="main-article__confirm_password" name="confirm" id="ma__conf-password" type="password" required placeholder="Confirm password">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+            <input type="submit" value="Enter" class="main-article__enter_button" >
+        </form>
+        <input type="image" src="/img/view.png" id="check_rg_button" class="check_password" onclick="show_hide_password('check_rg_button','ma__password');">
+        <input type="image" src="/img/view.png" id="check_rg_conf_button" class="check_conf_password" onclick="show_hide_password('check_rg_conf_button','ma__conf-password');">
+        <a class="main-article__login" th:href="@{/login}">Login?</a>
+      </div>
+    </div>
+    <div class="main-article__copy">© Arrkadique</div>
+  </article>
+</body>
+</html>

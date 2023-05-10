@@ -104,15 +104,17 @@ body{
 
 .layer__chat_list{
   position: relative;
-  display: flex;
+  display: inline-block;
   overflow-x: scroll;
-  max-height: calc(var(--index)*4.5);
-  max-width:92vw;
+  overflow-y: hidden;
+  max-height: calc(var(--index)*4);
+  width:92vw;
   text-transform: none;
 }
 
 .contact{
   position: relative;
+  float: left;
   flex: calc(var(--index)*12) 0 0;
   margin-right: calc(var(--index)/2);
   margin-bottom: calc(var(--index)/2);
@@ -120,6 +122,7 @@ body{
   width: calc(var(--index)*12);
   padding: calc(var(--index)/3);
   background-color: var(--blockColor);
+  border-color: var(--blockColorHover);
   border-radius: 10px 10px 10px 10px;
   color: rgb(216, 216, 216);
 }
@@ -133,6 +136,7 @@ body{
   background-color: var(--blockColorHover);
   border-radius: 10px 10px 10px 10px;
   color: rgb(216, 216, 216);
+  border-color: var(--blockColorHover);
 }
 
 .contact:hover .delete_contact_button{
@@ -284,14 +288,14 @@ body{
 .text_input_field{
   position:absolute;
   border-radius: 10px 10px 10px 10px;
-  top:calc(var(--index)*19.5);
-  right:22vw;
+  top:calc(var(--index)*25.5);
+  left:29vw;
   background-color: var(--blockColor);
   font-weight: 400;
   font-size: calc(var(--index)*var(--fontSizeCoff));
   border-color: rgba(209, 164, 112, 0.664);
   color: rgb(214, 214, 214);
-  min-height: calc(var(--index)*4);
+  min-height: calc(var(--index)*3);
   min-width: calc(1.5vw*30);
 }
 
@@ -401,6 +405,37 @@ body{
   color: beige;
 }
 
+.main-article__send_button{
+  position: absolute;
+  min-width: calc(var(--index)*7);
+  max-height: calc(var(--index) * 1.5);
+  left:46vw;
+  font-weight: 400;
+  top:calc(var(--index)*29);
+  font-size: calc(var(--index));
+  background-color:rgba(141, 141, 141, 0.514);
+  border-radius: 10px 10px 10px 10px;
+  font-size: calc(var(--index)*var(--fontSizeCoff));
+  border-color: aliceblue;
+  text-decoration: none;
+  color: beige;
+}
+
+.main-article__color_button{
+  position: relative;
+  min-width: calc(var(--index)*7);
+  max-height: calc(var(--index) * 1.5);
+  font-weight: 400;
+  margin-top: calc(var(--index)/2);
+  font-size: calc(var(--index));
+  background-color:rgba(141, 141, 141, 0.514);
+  border-radius: 10px 10px 10px 10px;
+  font-size: calc(var(--index)*var(--fontSizeCoff));
+  border-color: aliceblue;
+  text-decoration: none;
+  color: beige;
+}
+
 .main-article__text_changer{
   position: relative;
   max-height: calc(var(--index)*8.5);
@@ -461,6 +496,9 @@ body{
 .logout_button{
   font-size: calc(var(--index)* 1.2 *var(--fontSizeCoff));
   text-decoration: none;
+  padding: 3px;
+  background-color: rgba(141, 141, 141, 0.514);
+  border-radius: 10px 10px 10px 10px;
   color: beige;
 }
 

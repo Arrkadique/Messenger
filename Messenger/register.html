@@ -6,20 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/register.css">
   <script src="js/app.js" defer></script>
+  <script src="js/check-password.js" defer></script>
   <title>Document</title>
 </head>
 <body>
   <article class="main-article" style="background-image: url(img/second.jpg);">
     <div class="main-article__content">
-      <div class="container">
+      <div class="main-article__container">
         <h2 class="main-article__header">Register</h2>
-        <input class="email">
-        <input class="password">
-        <a class="login" href="./index.html">Login?</a>
-        <a class="enter_button" href="./messenger.html">Enter</a>
+        <form action="./messenger.html">
+          <input class="main-article__email" required placeholder="Email">
+          <input class="main-article__username" required placeholder="Username">
+          <input class="main-article__password" id="ma__password" type="password" required placeholder="Password">
+          <input class="main-article__confirm_password" id="ma__conf-password" type="password" required placeholder="Confirm password">
+          <input type="submit" value="Enter" class="main-article__enter_button" >
+        </form>
+        <input type="image" src="./img/view.png" id="check_rg_button" class="check_password" onclick="show_hide_password('check_rg_button','ma__password');">
+        <input type="image" src="./img/view.png" id="check_rg_conf_button" class="check_conf_password" onclick="show_hide_password('check_rg_conf_button','ma__conf-password');">
+        <a class="main-article__login" href="./index.html">Login?</a>
       </div>
     </div>
-    <div class="copy">© Arrkadique</div>
+    <div class="main-article__copy">© Arrkadique</div>
   </article>
 </body>
 </html>
